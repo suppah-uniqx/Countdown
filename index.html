@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Countdown</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <div class="controls">
+        <select id="language-select" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="jp">日本語</option>
+            <option value="lk">Sinhala</option>
+        </select>
+        
+        <select id="timezone-select" onchange="updateTimezone()">
+            <option value="local">Local Time</option>
+            <option value="UTC">UTC</option>
+            <option value="America/New_York">New York</option>
+            <option value="Europe/London">London</option>
+            <option value="Asia/Tokyo">Tokyo</option>
+            <option value="Asia/Colombo">Colombo</option>
+        </select>
+
+        <button id="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+    </div>
+
+    <main class="container">
+        <h1 id="title">Countdown to 2026</h1>
+        
+        <div class="countdown-box">
+            <div class="time-segment">
+                <span id="days">00</span>
+                <span class="label" id="label-days">Days</span>
+            </div>
+            <div class="time-segment">
+                <span id="hours">00</span>
+                <span class="label" id="label-hours">Hours</span>
+            </div>
+            <div class="time-segment">
+                <span id="minutes">00</span>
+                <span class="label" id="label-minutes">Minutes</span>
+            </div>
+            <div class="time-segment">
+                <span id="seconds">00</span>
+                <span class="label" id="label-seconds">Seconds</span>
+            </div>
+        </div>
+
+        <div class="music-player">
+            <p id="music-label">🎵 Play Music</p>
+            <button onclick="playMusic()">▶ Play</button>
+            <button onclick="pauseMusic()">⏸ Pause</button>
+            <button onclick="nextTrack()">⏭ Next</button>
+        </div>
+    </main>
+
+    <audio id="bg-music"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
